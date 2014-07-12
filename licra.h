@@ -54,4 +54,5 @@
 #define tilde ((-2.0*B)/(3.0*C))
 #define Lambda ((2.0*B*B*dt*1.0e-3)/(9.0*C*mu_1))
 
+#define NxNyNx Nx*Ny*Nz
 #define ERROr printf("cannot allocate memory\n"); exit(1);

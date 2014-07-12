@@ -86,7 +86,7 @@ void op(int file,
 	if((bt= fopen(name_bt, "w"))==NULL){ERROr2};
 	if((S = fopen(name_S , "w"))==NULL){ERROr4};
 	if((P = fopen(name_P , "w"))==NULL){ERROr5};
-	for(N= 0; N< Nx*Ny*Nz; N++){
+	for(N= 0; N< NxNyNz; N++){
 		data[0]= tilde*Q_00[N];
 		data[1]= tilde*Q_01[N];
 		data[2]= tilde*Q_02[N];

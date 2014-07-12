@@ -10,7 +10,7 @@ void sd(int m, int counter,
 
 	if((out_L= fopen("dat/Lxt.dat", "a"))==NULL){ERROr6};
 
-	if((Sxk= (double *)malloc((Nx*Ny*Nz)*sizeof(double)))==NULL){ERROr}
+	if((Sxk= (double *)malloc(NxNyNz*sizeof(double)))==NULL){ERROr}
 
 	fftw_complex *out_00= fftw_malloc(sizeof(fftw_complex)*(Nxh*Ny*Nz));
 	fftw_complex *out_11= fftw_malloc(sizeof(fftw_complex)*(Nxh*Ny*Nz));
@@ -77,7 +77,7 @@ void sd(int m, int counter,
 		}
 	}
 
-	for(N= 0; N< (Nx*Ny*Nz); N++){
+	for(N= 0; N< NxNyNz; N++){
 		Sxk[N]/= sum_Sxk;
 	}
 
@@ -101,7 +101,7 @@ void sd(int m, int counter,
 #if Nz== 1
 	fprintf(out_L, "%e %e\n", counter*dt, sqrt(1.0/(mean_value_k2*Nx*Ny)));
 #elif Nz> 1
-	fprintf(out_L, "%e %e\n", counter*dt, sqrt(1.0/(mean_value_k2*cbrt(Nx*Ny*Nz)*cbrt(Nx*Ny*Nz))));
+	fprintf(out_L, "%e %e\n", counter*dt, sqrt(1.0/(mean_value_k2*cbrt(NxNyNz)*cbrt(NxNyNz))));
 #endif
 
 	fclose(out_L);

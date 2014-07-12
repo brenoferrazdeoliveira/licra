@@ -17,13 +17,13 @@ int main(int argc, char **argv){
 	FILE *jm, *bt;
 	char name_jm[64], name_bt[64];
 
-	if((beta=  (double *)malloc((Nx*Ny*Nz)*sizeof(double)))==NULL){ERROr}
-	if((theta= (double *)malloc((Nx*Ny*Nz)*sizeof(double)))==NULL){ERROr}
+	if((beta=  (double *)malloc(NxNyNz*sizeof(double)))==NULL){ERROr}
+	if((theta= (double *)malloc(NxNyNz*sizeof(double)))==NULL){ERROr}
 
 	for(t= 0; t<= NF; t++){
 		sprintf(name_bt, "dat/bt-%d.dat", t);
 		if((bt= fopen(name_bt, "r"))==NULL){ERROr1};
-		for(N= 0; N< Nx*Ny*Nz; N++){
+		for(N= 0; N< NxNyNz; N++){
 			fscanf(bt, "%lf %lf\n", &beta[N], &theta[N]);
 		}
 		fclose(bt);

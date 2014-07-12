@@ -22,20 +22,20 @@ int main(int argc, char **argv){
 	double *Q_00,     *Q_11,     *Q_01,     *Q_02,     *Q_12;
 	double *Qtemp_00, *Qtemp_11, *Qtemp_01, *Qtemp_02, *Qtemp_12;
 
-	if((trlessQ2= (double *)malloc((5       )*sizeof(double)))==NULL){ERROr}
-	if((dQdt=     (double *)malloc((5       )*sizeof(double)))==NULL){ERROr}
+	if((trlessQ2= (double *)malloc(5     *sizeof(double)))==NULL){ERROr}
+	if((dQdt=     (double *)malloc(5     *sizeof(double)))==NULL){ERROr}
 	
-	if((Q_00=     (double *)malloc((Nx*Ny*Nz)*sizeof(double)))==NULL){ERROr}
-	if((Q_11=     (double *)malloc((Nx*Ny*Nz)*sizeof(double)))==NULL){ERROr}
-	if((Q_01=     (double *)malloc((Nx*Ny*Nz)*sizeof(double)))==NULL){ERROr}
-	if((Q_02=     (double *)malloc((Nx*Ny*Nz)*sizeof(double)))==NULL){ERROr}
-	if((Q_12=     (double *)malloc((Nx*Ny*Nz)*sizeof(double)))==NULL){ERROr}
+	if((Q_00=     (double *)malloc(NxNyNz*sizeof(double)))==NULL){ERROr}
+	if((Q_11=     (double *)malloc(NxNyNz*sizeof(double)))==NULL){ERROr}
+	if((Q_01=     (double *)malloc(NxNyNz*sizeof(double)))==NULL){ERROr}
+	if((Q_02=     (double *)malloc(NxNyNz*sizeof(double)))==NULL){ERROr}
+	if((Q_12=     (double *)malloc(NxNyNz*sizeof(double)))==NULL){ERROr}
 	
-	if((Qtemp_00= (double *)malloc((Nx*Ny*Nz)*sizeof(double)))==NULL){ERROr}
-	if((Qtemp_11= (double *)malloc((Nx*Ny*Nz)*sizeof(double)))==NULL){ERROr}
-	if((Qtemp_01= (double *)malloc((Nx*Ny*Nz)*sizeof(double)))==NULL){ERROr}
-	if((Qtemp_02= (double *)malloc((Nx*Ny*Nz)*sizeof(double)))==NULL){ERROr}
-	if((Qtemp_12= (double *)malloc((Nx*Ny*Nz)*sizeof(double)))==NULL){ERROr}
+	if((Qtemp_00= (double *)malloc(NxNyNz*sizeof(double)))==NULL){ERROr}
+	if((Qtemp_11= (double *)malloc(NxNyNz*sizeof(double)))==NULL){ERROr}
+	if((Qtemp_01= (double *)malloc(NxNyNz*sizeof(double)))==NULL){ERROr}
+	if((Qtemp_02= (double *)malloc(NxNyNz*sizeof(double)))==NULL){ERROr}
+	if((Qtemp_12= (double *)malloc(NxNyNz*sizeof(double)))==NULL){ERROr}
 	
 	ic(   Q_00, Q_11, Q_01, Q_02, Q_12);
 	op(0, Q_00, Q_11, Q_01, Q_02, Q_12);
